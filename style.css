@@ -1,0 +1,21 @@
+* {
+  font-family: Avenir, sans-serif;
+}
+body {
+  background-color: #DEDAD4;
+}
+
+header {
+  background-color: #9B9B8D;
+  padding: 35px;
+  border-bottom: 3px solid black;
+}
+
+footer {
+  background-color: #68685A;
+  padding: 25px;
+}
+
+#trackBin {
+  color: purple;
+}
