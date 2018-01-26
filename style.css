@@ -39,10 +39,10 @@ footer {
  #background-img {
   background-image: url('resources/track.jpg');
   background-size: 100%;
-  /* opacity: .19; */
+  opacity: .19;
 }
 
 #albumList {
-  margin: 10px;
   text-align: center;
+  margin-top: 20px;
 }

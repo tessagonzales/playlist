@@ -13,7 +13,6 @@ header {
   color: white;
   font-size: 35px;
   text-indent: 70px;
-
 }
 
 footer {
@@ -33,11 +32,9 @@ footer {
 
 #box {
   margin-top: 30px;
-  /* width: 700px;
-  height: 150px; */
+  padding: 30px;
   border: 3px solid black;
   background-color:#EEEEEE;
-
 
 }
 
@@ -45,10 +42,15 @@ footer {
   margin-top: 10px;
   background-color: #353528;
   color: #818178;
-
 }
 
 #goHome {
   background-color: #353528;
   color: #818178;
+  margin-left: 900px;
+}
+
+.row.allAlbums
+{
+  margin-top: 15px;
 }

@@ -1,60 +1,115 @@
-$( document ).ready(function() {
-    let goHome = $('#goHome')
-    let clearButton = $('#clearButton')
-    let submitButton = $('#submitButton')
-    let box = $('#box')
-    let smallAlbums = $('#smallAlbums')
-    //console.log('box: ', box)
-
-
-    fetch(`https://lit-fortress-6467.herokuapp.com/object`)
-      .then(response => response.json())
-      .then(albums => {
-          //console.log('albums: ', albums['results'])
-
-
-//album thumbnail display
-          for(let i=0; i< albums['results'].length; i++){
-            let allAlbums = albums['results'][i]
-            console.log(albums['results'][i]['cover_art']);
-            smallAlbums.append(`<img src='images/${allAlbums['cover_art']}' width='100' height='100'>`)
-
-
-            smallAlbums.click(() =>{
-              box.append(`
-                ${allAlbums['artist']}<BR>
-                ${allAlbums['title']}<br>
-                `) })
-
-                clearButton.click(() => {
-                    box = ''
-                })
-
-} // end of for loop
+$(document).ready(function() {
+  let goHome = $('#goHome')
+  let clearButton = $('#clearButton')
+  let submitButton = $('#submitButton')
+  let box = $('#box')
+  let smallAlbums1 = $('#smallAlbums1')
+  let smallAlbums2 = $('#smallAlbums2')
+  let smallAlbums3 = $('#smallAlbums3')
+  let smallAlbums4 = $('#smallAlbums4')
+  let smallAlbums5 = $('#smallAlbums5')
+  //console.log('box: ', box)
 
 
 
 
 
+  fetch(`https://lit-fortress-6467.herokuapp.com/object`)
+    .then(response => response.json())
+    .then(albums => {
+      //console.log('albums: ', albums['results'])
+
+      for (let keys in albums) {
+        //console.log(albums[keys][0]['cover_art'])
+        smallAlbums1.append(`<img src='images/${albums[keys][0]['cover_art']}' width='100' height='100'>`)
+        smallAlbums1.click(() => {
+          box.append(`
+              ${albums[keys][0]['artist']} :
+              ${albums[keys][0]['title']}<br>
+              `)
+        })
+
+        smallAlbums2.append(`<img src='images/${albums[keys][1]['cover_art']}' width='100' height='100'>`)
+        smallAlbums2.click(() => {
+          box.append(`
+              ${albums[keys][1]['artist']} :
+              ${albums[keys][1]['title']}<br>
+              `)
+
+        })
+
+        smallAlbums3.append(`<img src='images/${albums[keys][2]['cover_art']}' width='100' height='100'>`)
+        smallAlbums3.click(() => {
+          box.append(`
+              ${albums[keys][2]['artist']} :
+              ${albums[keys][2]['title']}<br>
+              `)
+        })
+
+        smallAlbums4.append(`<img src='images/${albums[keys][3]['cover_art']}' width='100' height='100'>`)
+        smallAlbums4.click(() => {
+          box.append(`
+              ${albums[keys][3]['artist']} :
+              ${albums[keys][3]['title']}<br>
+              `)
+        })
+
+        smallAlbums5.append(`<img src='images/${albums[keys][4]['cover_art']}' width='100' height='100'>`)
+        smallAlbums5.click(() => {
+          box.append(`
+              ${albums[keys][4]['artist']} :
+              ${albums[keys][4]['title']} <BR>
+              `)
+        })
+
+        clearButton.click(() => {
+          box.empty()
+        })
 
 
-      }) // end of .then()
+      } // end of for in loop
+
+      //Submitted
+      let userTracks = submitButton.click(() => {
+       //console.log('button pressed!');
+       box.empty();
+       box.append(`Submitted to bin! Continue:<BR>`)
+      });
+
+
+
+
+    }) // end of .then()
+
+
+
+
+  //go Home Button
+  goHome.click(() => {
+    location.replace("./index.html")
+  });
+
+
+  // function ($) {
+  //         function processForm( e ){
+  //             $.ajax({
+  //                 url: 'https://lit-fortress-6467.herokuapp.com/post',
+  //                 dataType: 'text',
+  //                 type: 'post',
+  //                 contentType: 'application/x-www-form-urlencoded',
+  //                 data: $(this).serialize(),
+  //                 success: function( data, textStatus, jQxhr ){
+  //                     $('#response pre').html( data );
+  //                 },
+  //                 error: function( jqXhr, textStatus, errorThrown ){
+  //                     console.log( errorThrown );
+  //                 }
+  //             });
+  //         }
 
 
 
 
 
 
-
-
-
-
-
-
-
-
-//go Home Button
-      goHome.click( () => {
-        location.replace("./index.html")
-      })
 }) //end of jQuery
