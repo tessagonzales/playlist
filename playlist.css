@@ -23,11 +23,11 @@ footer {
   font-size: 20px;
 }
 
-#smallAlbums {
+.row.allAlbums {
   margin: 25px;
   width: auto;
   height: 100px;
-  overflow-y: auto;
+  overflow-x: scroll;
 }
 
 #box {

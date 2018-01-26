@@ -62,6 +62,20 @@ $(document).ready(function() {
               `)
         })
 
+
+        //Submitted
+        let userTracks = submitButton.click(() => {
+          console.log('submitted: ', box)
+          box.empty();
+
+          // $.post('https://lit-fortress-6467.herokuapp.com/post',
+          // box,
+          // function(data,status){
+          //     console.log("Data: " + data + "Status: " + status);
+          // })
+        });
+
+
         clearButton.click(() => {
           box.empty()
         })
@@ -69,12 +83,6 @@ $(document).ready(function() {
 
       } // end of for in loop
 
-      //Submitted
-      let userTracks = submitButton.click(() => {
-       //console.log('button pressed!');
-       box.empty();
-       box.append(`Submitted to bin! Continue:<BR>`)
-      });
 
 
 
@@ -88,24 +96,6 @@ $(document).ready(function() {
   goHome.click(() => {
     location.replace("./index.html")
   });
-
-
-  // function ($) {
-  //         function processForm( e ){
-  //             $.ajax({
-  //                 url: 'https://lit-fortress-6467.herokuapp.com/post',
-  //                 dataType: 'text',
-  //                 type: 'post',
-  //                 contentType: 'application/x-www-form-urlencoded',
-  //                 data: $(this).serialize(),
-  //                 success: function( data, textStatus, jQxhr ){
-  //                     $('#response pre').html( data );
-  //                 },
-  //                 error: function( jqXhr, textStatus, errorThrown ){
-  //                     console.log( errorThrown );
-  //                 }
-  //             });
-  //         }
 
 
 
