@@ -1,5 +1,6 @@
 * {
-  font-family: Avenir, sans-serif;
+  font-family: Avenir, cursive;
+  font-weight: 100;
 }
 body {
   background-color: #DEDAD4;
@@ -13,9 +14,35 @@ header {
 
 footer {
   background-color: #68685A;
-  padding: 25px;
+  padding: 10px;
+  color: white;
+  font-size: 20px;
+}
+
+.row {
+  height: 100vh;
 }
 
 #trackBin {
-  color: purple;
+  color: #4F1C6A;
+  font-size:60px;
+  padding-top: 325px;
+}
+
+#trackButton {
+  background-color: #353528;
+  color: #C9C9C5;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+ #background-img {
+  background-image: url('resources/track.jpg');
+  background-size: 100%;
+  /* opacity: .19; */
+}
+
+#albumList {
+  margin: 10px;
+  text-align: center;
 }
